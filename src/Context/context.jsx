@@ -48,6 +48,7 @@ async function getPetsData() {
         life_span: dogsDataDesc[i].life_span,
         temperament: dogsDataDesc[i].temperament,
         origin: dogsDataDesc[i].origin || "United States",
+        isFavorite: false,
       }))
     )
     .sort(() => Math.random() - 0.5);

@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { PetsState } from "../Context/context";
+import { GrFavorite } from "react-icons/gr";
+import { MdOutlineFavorite } from "react-icons/md";
 
 function PetDesc() {
   const [pet, setPet] = useState([]);
   const { name } = useParams();
-  const { petData } = PetsState();
+  const { petData, setPetData } = PetsState();
   useEffect(() => {
     const selectedPet = petData.filter((pet) => pet.name === name);
     setPet(selectedPet);
@@ -15,7 +17,25 @@ function PetDesc() {
 
   return (
     <main className="hero flex justify-center items-center ">
-      <article className="flex flex-col md:flex-row items-center gap-2 md:gap-5  shadow-lg my-28 bg-gray-100">
+      <article className="flex flex-col md:flex-row items-center gap-2 md:gap-5 relative  shadow-lg my-28 bg-gray-100">
+        <span
+          className="absolute top-2 right-2 cursor-pointer z-30"
+          onClick={() => {
+            setPetData((prevState) => {
+              return prevState.map((pet) =>
+                pet.id === pet.id
+                  ? { ...pet, isFavorite: !pet.isFavorite }
+                  : pet
+              );
+            });
+          }}
+        >
+          {pet[0]?.isFavorite ? (
+            <MdOutlineFavorite className=" text-xl text-red-600 hover:text-red-400" />
+          ) : (
+            <GrFavorite className=" text-xl text-red-400 hover:text-red-600" />
+          )}
+        </span>
         <div className="img md:flex-1 w-full flex justify-center md:justify-start">
           <img
             src={pet[0]?.url}

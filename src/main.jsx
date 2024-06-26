@@ -11,12 +11,16 @@ import {
 import Landing from "./pages/landing.jsx";
 import Context from "./Context/context.jsx";
 import PetDesc from "./pages/petdesc.jsx";
+import Login from "./pages/login.jsx";
+import Favorite from "./pages/favorite.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       <Route path="" element={<Landing />} />
       <Route path="/:name" element={<PetDesc />} />
+      <Route path="login" element={<Login />} />
+      <Route path="favorite" element={<Favorite />} />
     </Route>
   )
 );

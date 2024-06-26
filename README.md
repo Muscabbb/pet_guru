@@ -13,8 +13,10 @@ Welcome to the Pet Information Website project! This project provides informatio
 
 ## Features
 
+- **Landing Page:** Users see all pets in the landing page.
 - **Login Page:** Users can log in.
 - **Favorite Pets Page:** Users can add or remove pets from their favorites list.
+- **Search For Specific Pet:** Users can Search for specific pet.
 - **Pet Description Page:** Users can view detailed information about each pet.
 
 ## Technologies Used
@@ -27,6 +29,7 @@ This project is built using the following tools and libraries:
 - **Tailwind CSS**: A utility-first CSS framework for rapid UI development.
 - **Prop-Types**: Runtime type checking for React props.
 - **React Router DOM**: A collection of navigational components for React applications.
+- **React Hook Form**: A library for managing forms in React applications. It is designed to provide a simple and efficient way to handle form inputs, validations, and form submissions.
 
 ## Installation
 
