@@ -6,7 +6,7 @@ function Navbar() {
       <Link to={""}>
         <div className="logo flex items-center">
           <img
-            src={"../../public/img/logo.svg"}
+            src={"../../public/logo.svg"}
             alt="log"
             className="w-8 md:w-10"
           />
