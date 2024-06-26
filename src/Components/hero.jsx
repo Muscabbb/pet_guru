@@ -14,7 +14,7 @@ function Hero() {
                 Expert
               </p>
               <img
-                src={"../../public/assets/img/hand_icon.png"}
+                src={"../../public/img/hand_icon.png"}
                 alt="hand img"
                 className="w-[40px]"
               />
@@ -35,7 +35,7 @@ function Hero() {
         </section>
         <section className="hero-right hidden flex-1 md:flex items-center justify-center">
           <img
-            src="../../public/assets/img/hero.png"
+            src="../../public/img/hero.png"
             alt="hero"
             className=" h-[400px] w-[400px]"
           />
