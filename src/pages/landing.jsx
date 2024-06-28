@@ -8,11 +8,11 @@ function landing() {
 
   // searching for specific Pet by it's name
   function searchPetName(name) {
-    let tempData = petData;
+    let tempData = tempPetData;
     if (name) {
       tempData = tempData.filter((pet) => {
         const smallName = pet.name.toLowerCase();
-        if (smallName.startsWith(name.toLowerCase())) {
+        if (smallName.includes(name.toLowerCase())) {
           return Pet;
         }
       });

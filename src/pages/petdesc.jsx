@@ -13,8 +13,6 @@ function PetDesc() {
     setPet(selectedPet);
   }, [setPet, petData, name]);
 
-  console.log(pet[0]?.description);
-
   return (
     <main className="hero flex justify-center items-center ">
       <article className="flex flex-col md:flex-row items-center gap-2 md:gap-5 relative  shadow-lg my-28 bg-gray-100">
@@ -22,10 +20,8 @@ function PetDesc() {
           className="absolute top-2 right-2 cursor-pointer z-30"
           onClick={() => {
             setPetData((prevState) => {
-              return prevState.map((pet) =>
-                pet.id === pet.id
-                  ? { ...pet, isFavorite: !pet.isFavorite }
-                  : pet
+              return prevState.map((p) =>
+                p.name === name ? { ...p, isFavorite: !p.isFavorite } : p
               );
             });
           }}

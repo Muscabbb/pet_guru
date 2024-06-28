@@ -18,8 +18,8 @@ async function getPetsData() {
   const catsDataDesc = await (
     await fetch("https://api.thecatapi.com/v1/breeds")
   ).json();
-  //
 
+  // gathering all data to one array with random sorting to return it
   const petsData = [
     ...catsDataImages.map((pet, i) => ({
       weight: dogsDataDesc[i].weight.metric,
@@ -53,6 +53,7 @@ async function getPetsData() {
     )
     .sort(() => Math.random() - 0.5);
 
+  // checking if the data is there then return it
   if (petsData.length > 0) {
     return petsData;
   }
@@ -61,20 +62,19 @@ async function getPetsData() {
 let tempPetData = [];
 
 function Context({ children }) {
-  // this state can be accessed by any component
   const [petData, setPetData] = useState([]);
 
   useEffect(() => {
     const getData = async () => {
       const data = await getPetsData();
-      tempPetData = data;
       setPetData(data);
+      tempPetData = data;
     };
     getData();
   }, []);
 
   return (
-    // this wil provide the state data and dispatch function to the children
+    // this wil provide the  data be global data
     <petsContext.Provider value={{ petData, setPetData, tempPetData }}>
       {children}
     </petsContext.Provider>
